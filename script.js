@@ -10,33 +10,39 @@ function writePassword() {
   passwordText.value = password;
 
 }
-var passwordCriteria = ["","",0];
+
+var passwordCriteria = [];
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-function generatePassword() {
+function generatePassword()
 
-  var response1 = prompt("Include special charaters?", "yes/no");
-
-  if (response1 !== "yes" && response1 !== "no"){
-    alert("please provide a valid response");
-  }
-  if (response1 == "yes"){
-    passwordCriteria.[0] = "yes";
+//function to include uppercase letters
+function firstPrompt {
+  var firstResponse = confirm("Include special charaters?");
+  if (firstResponse == true){
+    passwordCriteria.push("yes");
     return secondPrompt()
   }
-  if (response1 == "no"){
-    passwordCriteria.[0] = "yes";
-    return secondPrompt()
+  if (firstResponse == false){
+   passwordCriteria.push("no");
+   return secondPrompt()
   }
 }
-
+//function to include uppercase letters
 function secondPrompt() {
-  var response2 = prompt("Include uppercase letters?", "yes/no");
-  if (response2 !== "yes" && response2 !== "no"){
-    alert("please provide a valid response");
+  var secondResponse = confirm("Include uppercase letters?");
+  if (secondResponse == true) {
+    passwordCriteria.push("yes")
   }
-  if ()
+  if (secondResponse == false) {
+    passwordCriteria.push("no")
+  }
 
+}
+
+//function to confirm character count
+function thirdPrompt() {
+  var thirdResponse = prompt("Please enter character length", "Minimum of 8 characters and a maximum of 120")
 }
