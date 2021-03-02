@@ -18,7 +18,7 @@ function writePassword() {
   console.log("working 1")
   console.log(randomizedPassword)
   var passwordText = document.querySelector("#password");
-  passwordText.value = randomizedPassword;
+  passwordText.value = randomizedPassword.join("");
 }
   function randomize() {
     for (var i = 0; i < numberLength; i++) {
@@ -57,7 +57,7 @@ function generatePassword(){
   function secondPrompt() {
     var secondResponse = confirm("Include lowercase?");
     if (secondResponse == true){
-     passwordCriteria = passwordCriteria.concat(lowercaseArr)
+     passwordCriteria = passwordCriteria.concat(lowerCaseArr)
       console.log(passwordCriteria)
     }
   }
