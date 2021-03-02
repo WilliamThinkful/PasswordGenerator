@@ -1,34 +1,39 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-//var lowerCaseArr = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"]
+var lowerCaseArr = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"]
 var upperCaseArr = ["Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M"]
 var numbersArr = ["1","2","3","4","5","6","7","8","9","0"]
 var specialArr = ["!","@","#","$","%","^","&","*","(",")","_","+","-","=","/","?","."]
-var passwordCriteria = ["q","w","e","r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"];
+var passwordCriteria = [];
 var numberLength = 0
-var randomizedPassword = [];
+var randomizedPassword = []
 
 // Write password to the #password input
+
 
 function writePassword() {
   generatePassword();
  console.log(numberLength)
   randomize()
   console.log("working 1")
+  console.log(randomizedPassword)
   var passwordText = document.querySelector("#password");
-
+  passwordText.value = randomizedPassword;
+}
   function randomize() {
     for (var i = 0; i < numberLength; i++) {
-      var special = Math.floor(Math.random() * (numberLength-1));// i++;
-      randomizedPassword.push(passwordCriteria[special])}
+      var special = Math.floor(Math.random() * (passwordCriteria.length - 1));// i++;
+      console.log(passwordCriteria)
+      randomizedPassword.push(passwordCriteria[special]);
+    }
   console.log("working 2")
   console.log(passwordCriteria)
   console.log(randomizedPassword)
   console.log(numberLength)
 
-  passwordText.value = randomizedPassword;
+  //passwordText.value = randomizedPassword;
   }
-}
+
 
 
 // Add event listener to generate button
@@ -45,6 +50,14 @@ function generatePassword(){
     if (firstResponse == true){
       //passwordCriteria.push(specialArr);
      passwordCriteria = passwordCriteria.concat(specialArr)
+      console.log(passwordCriteria)
+    }
+  }
+  function secondPrompt() {
+    var secondResponse = confirm("Include special charaters?");
+    if (secondResponse == true){
+      //passwordCriteria.push(specialArr);
+     passwordCriteria = passwordCriteria.concat(lowercaseArr)
       console.log(passwordCriteria)
     }
   }
@@ -88,7 +101,5 @@ function generatePassword(){
   
 }
 
-console.log("working count")
-console.log(numberLength)
-console.log("working count")
+
 
