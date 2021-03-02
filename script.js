@@ -53,29 +53,28 @@ function generatePassword(){
       console.log(passwordCriteria)
     }
   }
+  //function to include lowercase
   function secondPrompt() {
-    var secondResponse = confirm("Include special charaters?");
+    var secondResponse = confirm("Include lowercase?");
     if (secondResponse == true){
-      //passwordCriteria.push(specialArr);
      passwordCriteria = passwordCriteria.concat(lowercaseArr)
       console.log(passwordCriteria)
     }
   }
 
   //function to include uppercase letters
-  function secondPrompt() {
-    var secondResponse = confirm("Include uppercase letters?");
-    if (secondResponse == true) {
-      //passwordCriteria.push(upperCaseArr)
+  function thirdPrompt() {
+    var thirdResponse = confirm("Include uppercase letters?");
+    if (thirdResponse == true) {
       passwordCriteria = passwordCriteria.concat(upperCaseArr)
       console.log(passwordCriteria)
     }
   }
 
   //function to include numbers
-  function thirdPrompt() {
-    var thirdResponse = confirm("include numbers?");
-    if (thirdResponse == true) {
+  function fourthPrompt() {
+    var fourthResponse = confirm("include numbers?");
+    if (fourthResponse == true) {
       //passwordCriteria.push(numbersArr)
       passwordCriteria = passwordCriteria.concat(numbersArr)
     
@@ -94,10 +93,11 @@ function generatePassword(){
     }
     
   }
-  firstPrompt()
-  secondPrompt()
-  thirdPrompt()
-  characterCount()
+  firstPrompt();
+  secondPrompt();
+  thirdPrompt();
+  fourthPrompt();
+  characterCount();
   
 }
 
